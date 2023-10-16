@@ -42,6 +42,7 @@ export default function Produtos(props) {
             <h1>Produtos</h1>
             <div>
                 {produtos.map((produto, indice) => (
+                    {props.prod == produto.nome ? }
                     <div key={indice}>
                         <p>ID: {produto.id}</p>
                         <p>Nome: {produto.nome}</p>
