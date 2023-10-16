@@ -1,9 +1,9 @@
 import Produtos from "@/components/Produtos/Produtos";
 
-export default function ProdutosPage(){
+export default function Melao(){
     return (
         <div>
-            <Produtos/>
+            <Produtos prod={'melao'}/>
         </div>
     );
 }
