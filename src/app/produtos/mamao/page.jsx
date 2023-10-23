@@ -1,9 +1,10 @@
-import Produtos from "@/components/Produtos/Produtos";
+import Produtos from '@/components/Produtos/Produtos'
+import React from 'react'
 
-export default function Mamao(){
-    return (
-        <div>
-            <Produtos prod={'mamao'}/>
-        </div>
-    );
+export default function Mamao() {
+  return (
+    <>
+        <Produtos prod={"Mamão"}/>
+    </>
+  )
 }
