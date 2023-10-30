@@ -1,10 +1,11 @@
+import Link from "next/link";
 import { redirect } from "next/navigation";
 
-export default async function FrutaView() {
+export default async function FrutaViewAll() {
     let frutas;
     
     try{
-        const response = await fetch("http://localhost:3000/dados/produto-api");
+        const response = await fetch("http://localhost:3000/dados/produto-api/0");
 
         frutas = await response.json();
 
@@ -22,7 +23,7 @@ export default async function FrutaView() {
                     <li key={fruta.id}>
                         <p>{fruta.nome}</p>
                         <p>{fruta.tipo}</p>
-                        <p>{fruta.desc}</p>
+                        <p><Link href={`/consumo/fruta-view/${fruta.id}`}>DESCRIÇÃO</Link></p>
                         <hr />
                     </li>
                 ))}
