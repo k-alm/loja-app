@@ -21,6 +21,16 @@ const produtos = [
     }
 ];
 
-export async function GET() {
-    return NextResponse.json(produtos);
+export async function GET(request, {params}) {
+
+    const id = params.id;
+
+    if(id > 0 && id <= (produtos.length)){
+        //GET-BY-ID
+        return NextResponse.json(produtos.find((produto) => produto.id == id));
+    }else{
+        //GET-ALL
+        return id == 0 ? NextResponse.json(produtos) : NextResponse.redirect("http://localhost:3000/error");
+    }
+
 }
